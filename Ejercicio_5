@@ -1,0 +1,17 @@
+def extraer_digitos(s, index=0):
+    if index == len(s):
+        return 0
+    
+    if s[index].isdigit():
+        return int(s[index]) + extraer_digitos(s, index + 1) * 10
+    else:
+        return extraer_digitos(s, index + 1)
+
+# Ejemplo de uso
+def main():
+    alfanumerico_str = "a1b2c3d4e5"
+    extraer_numero = extraer_digitos(alfanumerico_str)
+    print("El número formado por los dígitos del string es:", extraer_numero)
+
+if __name__ == "__main__":
+    main()

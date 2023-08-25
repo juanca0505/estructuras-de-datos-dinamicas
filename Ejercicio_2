@@ -1,0 +1,18 @@
+def invertir_la_mitad_de_string(input_string):
+    longitud = len(input_string)
+    half_length = longitud // 2
+
+    primera_mitad = input_string[:half_length]
+    segunda_mitad = input_string[half_length:]
+
+    invertir_segunda_mitad = segunda_mitad[::-1]
+
+    new_string = primera_mitad + invertir_segunda_mitad
+
+    return new_string
+
+# Ejemplo de uso
+original_string = input("Ingresa una cadena: ")
+new_string = invertir_la_mitad_de_string(original_string)
+print("Cadena original:", original_string)
+print("Cadena con la segunda mitad invertida:", new_string)

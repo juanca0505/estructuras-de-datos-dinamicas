@@ -1,0 +1,22 @@
+def is_element_at_indice(lst, element, indice):
+    if indice < 0 or indice >= len(lst):
+        return False
+
+    if lst[indice] == element:
+        return True
+    else:
+        return is_element_at_indice(lst, element, indice + 1)
+
+# Ejemplo de uso
+def main():
+    lista = [1, 2, 3, 4, 5]
+    elemento = 1
+    indice = 2
+
+    if is_element_at_indice(lista, elemento, indice):
+        print(f"El elemento {elemento} está en la lista en el índice {indice}.")
+    else:
+        print(f"El elemento {elemento} no está en la lista en el índice {indice}.")
+
+if __name__ == "__main__":
+    main()

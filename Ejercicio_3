@@ -1,0 +1,26 @@
+def suma_numeros(matrix, row, col, size):
+    if row == size:
+        return 0
+
+    current_number = matrix[row][col]
+    is_odd = current_number % 2 != 0
+
+    if col < size - 1:
+        return (current_number if is_odd else 0) + suma_numeros(matrix, row, col + 1, size)
+    else:
+        return (current_number if is_odd else 0) + suma_numeros(matrix, row + 1, 0, size)
+
+# Ejemplo de uso
+def main():
+    matrix = [
+        [122165, 2, 33231],
+        [4, 45789, 6],
+        [79909, 8, 912321]
+    ]
+
+    size = len(matrix)
+    resultado = suma_numeros(matrix, 0, 0, size)
+    print("La sumatoria de los números impares en la matriz es:", resultado)
+
+if __name__ == "__main__":
+    main()
